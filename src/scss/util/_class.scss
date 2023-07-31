@@ -126,13 +126,6 @@
   overflow-y: hidden;
 }
 
-@media (min-width: 400px) {
-  .disable-scroll {
-    overflow-y: hidden;
-    padding-right: 8px;
-  }
-}
-
 .animate {
   opacity: 0;
   transition: all 1s;
