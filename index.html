@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vite + Vue</title>
+  </head>
+  <body>
+    <header>
+      <div class="header container">
+        <div class="logo">Insure<a href="#"></a></div>
+        <button class="header-menu-toggle"></button>
+        <nav class="header-menu">
+          <div class="header-menu-overlay">
+            <ul class="header-menu-flexbox">
+              <li><a href="#">HOW WE WORK</a></li>
+              <li><a href="#">BLOG</a></li>
+              <li><a href="#">ACCOUNT</a></li>
+              <li><button>VIEW PLANS</button></li>
+              <li>
+                <div class="theme-toggle">
+                  <label class="switch">
+                    <input type="checkbox" class="checkbox" />
+                    <div class="slider"></div>
+                  </label>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </nav>
+      </div>
+    </header>
+    <div>
+      <div class="hero container">
+        <picture class="hero-picture anim">
+          <source
+            media="(min-width: 600px)"
+            srcset="src/assets/images/image-intro-desktop.jpg"
+          />
+          <img src="src/assets/images/image-intro-mobile.jpg" alt="hero_img" />
+        </picture>
+        <article class="hero-article anim">
+          <h1>Humanizing your insurance.</h1>
+          <p>
+            Get your life insurance coverage easier and faster. We blend our
+            expertise and technology to help you find the plan that’s right for
+            you. Ensure you and your loved ones are protected.
+          </p>
+          <button>VIEW PLANS</button>
+        </article>
+      </div>
+    </div>
+    <main class="main container">
+      <div class="row1">
+        <h2>We’re different</h2>
+        <ul class="row1-flex">
+          <li class="row1-box1">
+            <div class="inner">
+              <div class="icon">
+                <i></i>
+              </div>
+              <h2>Snappy Process</h2>
+              <p>
+                Our application process can be completed in minutes, not hours.
+                Don’t get stuck filling in tedious forms.
+              </p>
+            </div>
+          </li>
+          <li class="row1-box2">
+            <div class="inner">
+              <div class="icon">
+                <i></i>
+              </div>
+              <h2>Affordable Prices</h2>
+              <p>
+                We don’t want you worrying about high monthly costs. Our prices
+                may be low, but we still offer the best coverage possible.
+              </p>
+            </div>
+          </li>
+          <li class="row1-box3">
+            <div class="inner">
+              <div class="icon">
+                <i></i>
+              </div>
+
+              <h2>People First</h2>
+              <p>
+                Our plans aren’t full of conditions and clauses to prevent
+                payouts. We make sure you’re covered when you need it.
+              </p>
+            </div>
+          </li>
+        </ul>
+      </div>
+      <div class="row2">
+        <div class="inner">
+          <h2>Find out more about how we work</h2>
+          <button>HOW WE WORK</button>
+        </div>
+      </div>
+    </main>
+    <footer>
+      <div class="footer container">
+        <div>
+          <div class="footer-logo logo"><a href="#">INSURE</a></div>
+          <ul class="footer-brands">
+            <li><a href="#"></a></li>
+            <li><a href="#"></a></li>
+            <li><a href="#"></a></li>
+            <li><a href="#"></a></li>
+          </ul>
+        </div>
+        <ul class="footer-col-wrapper">
+          <li>
+            <div>Our company</div>
+            <ul class="footer-links">
+              <li><a href="#">How we work</a></li>
+              <li><a href="#">Why Insure?</a></li>
+              <li><a href="#">View plans</a></li>
+              <li><a href="#">Reviews</a></li>
+            </ul>
+          </li>
+          <li>
+            <div>Help me</div>
+            <ul class="footer-links">
+              <li><a href="#">FAQ</a></li>
+              <li><a href="#">Terms of use</a></li>
+              <li><a href="#">Privacy policy</a></li>
+              <li><a href="#">Cookies</a></li>
+            </ul>
+          </li>
+          <li>
+            <div>Contact</div>
+            <ul class="footer-links">
+              <li><a href="#">Sales</a></li>
+              <li><a href="#">Support</a></li>
+              <li><a href="#">Live chat</a></li>
+            </ul>
+          </li>
+          <li>
+            <div>Others</div>
+            <ul class="footer-links">
+              <li><a href="#">Careers</a></li>
+              <li><a href="#">Press</a></li>
+              <li><a href="#">Licenses</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </footer>
+    <div class="loading-wrapper">
+      <div class="three-body">
+        <div class="three-body__dot"></div>
+        <div class="three-body__dot"></div>
+        <div class="three-body__dot"></div>
+      </div>
+    </div>
+    <script type="module" src="/src/js/main.js"></script>
+  </body>
+</html>

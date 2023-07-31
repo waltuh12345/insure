@@ -1,0 +1,71 @@
+@use "../util" as *;
+footer {
+  @extend .overlay;
+  padding: 1.5rem 0;
+}
+
+.footer {
+  > :nth-child(1) {
+    margin-bottom: 2rem;
+    padding-bottom: 1.8rem;
+    border-bottom: 0.1rem solid var(--clr-surface);
+    @include flex(column, 1.5rem 0);
+  }
+
+  &-brands {
+    @include flex(row, 0 1.5rem);
+    justify-content: center;
+
+    > * a {
+      @include fa-size($fa-size-scale-2xl);
+    }
+
+    :nth-child(1) a {
+      @include fa-icon-brands($fa-var-facebook);
+    }
+
+    > :nth-child(2) a {
+      @include fa-icon-brands($fa-var-twitter);
+    }
+
+    > :nth-child(3) a {
+      @include fa-icon-brands($fa-var-pinterest);
+    }
+
+    > :nth-child(4) a {
+      @include fa-icon-brands($fa-var-instagram);
+    }
+  }
+
+  &-col-wrapper {
+    @include flex(column, 2.5rem);
+
+    div {
+      margin-bottom: 1rem;
+      opacity: 0.8;
+    }
+
+    ul {
+      display: grid;
+      gap: 0.5rem 0;
+    }
+  }
+}
+
+@media (min-width: 600px) {
+  .footer {
+    > :first-child {
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    &-col-wrapper {
+      flex-direction: row;
+
+      > * {
+        flex: 1;
+      }
+    }
+  }
+}

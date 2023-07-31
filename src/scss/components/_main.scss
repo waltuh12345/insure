@@ -1,0 +1,125 @@
+@use "../util" as *;
+
+.main {
+  .row1 {
+    margin-bottom: 6rem;
+    > h2 {
+      margin-bottom: 2rem;
+      font-size: var(--fs-heading);
+      font-weight: $semibold;
+    }
+
+    &-flex {
+      @include flex(column, 3rem 1.5rem);
+      align-items: stretch;
+
+      > * {
+        @extend .overlay;
+        border-radius: var(--card-radius);
+        box-shadow: none;
+
+        &::before {
+          border-radius: var(--card-radius);
+        }
+
+        &::after {
+          border-radius: var(--card-radius);
+        }
+      }
+    }
+
+    &-box1 i {
+      @include fa-icon-solid($fa-var-bolt-lightning);
+    }
+
+    &-box2 i {
+      @include fa-icon-solid($fa-var-money-bill);
+    }
+
+    &-box3 i {
+      @include fa-icon-solid($fa-var-user);
+    }
+
+    .inner {
+      padding: 2rem 1rem;
+      border-radius: 0.4em;
+      box-shadow: $card-box-shadow;
+      height: 100%;
+    }
+  }
+
+  .icon {
+    @include fa-size($fa-size-scale-2xl);
+    @extend .overlay;
+    height: 3rem;
+    position: relative;
+    overflow: hidden;
+    width: 80px;
+    height: 80px;
+    margin-inline: auto;
+    border-radius: 50%;
+    margin-bottom: 1rem;
+    display: grid;
+    place-items: center;
+    box-shadow: $card-box-shadow;
+
+    &::after {
+      opacity: 0.2;
+    }
+  }
+
+  .row2 {
+    @extend .overlay;
+    box-shadow: none;
+    border-radius: var(--card-radius);
+
+    &::before,
+    &::after {
+      border-radius: var(--card-radius);
+    }
+
+    .inner {
+      padding: 1.5rem 2rem;
+      @include flex(column, 2rem);
+      border-radius: var(--card-radius);
+      box-shadow: $card-box-shadow;
+    }
+
+    h2 {
+      margin: 0;
+    }
+
+    button {
+      @extend .primary-btn;
+    }
+  }
+}
+
+@media (min-width: 600px) {
+  .main {
+    .row1-flex {
+      flex-direction: row;
+      flex-wrap: wrap;
+
+      > * {
+        flex: 1 0 250px;
+      }
+    }
+
+    .row2 {
+      .inner {
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+      }
+
+      h2 {
+        max-width: 400px;
+      }
+
+      button {
+        white-space: nowrap;
+      }
+    }
+  }
+}

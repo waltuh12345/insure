@@ -1,0 +1,126 @@
+@use "../util" as *;
+
+@mixin icon($name, $size) {
+  @include fa-icon-solid($name);
+  @include fa-size($size);
+}
+
+.header {
+  --box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
+    rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  min-height: 5.6rem;
+  text-align: initial;
+
+  &-menu {
+    font-size: 14px;
+    display: none;
+    position: fixed;
+    inset: 0;
+    z-index: 100;
+    backdrop-filter: blur(4px);
+
+    &-toggle {
+      @include icon($fa-var-bars, $fa-size-scale-lg);
+      z-index: 101;
+
+      &.active {
+        @include icon($fa-var-close, $fa-size-scale-lg);
+      }
+    }
+
+    &-overlay {
+      overflow-y: scroll;
+      width: min(60%, 20em);
+      margin-left: auto;
+      height: 100%;
+      @extend .overlay;
+    }
+
+    &-flexbox {
+      @include flex(column, 1.5rem);
+      padding: 0 2rem;
+      padding-top: 6rem;
+      line-height: 1;
+
+      button {
+        @extend .primary-btn !optional;
+        font-size: 10px;
+      }
+    }
+  }
+
+  .theme-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0 1rem;
+    padding-top: 2rem;
+    border-top: 2px solid var(--clr-surface);
+
+    .slider {
+      font-size: 14px;
+    }
+
+    &::before {
+      content: "Appearance";
+      font-weight: $medium;
+      font-size: 14px;
+    }
+  }
+}
+
+@media (min-width: 860px) {
+  .header {
+    &-menu-toggle {
+      display: none;
+    }
+
+    &-menu {
+      position: initial;
+      display: block;
+      backdrop-filter: blur(0);
+
+      &-overlay {
+        width: initial;
+        height: initial;
+        margin: 0;
+        position: initial;
+        overflow-y: initial;
+        box-shadow: none;
+
+        &::before {
+          position: initial;
+          background-color: initial;
+        }
+
+        &::after {
+          position: initial;
+          background-color: initial;
+        }
+      }
+
+      &-flexbox {
+        padding: 0;
+        flex-direction: row;
+        align-items: center;
+
+        > :nth-child(4) {
+          margin-left: 2rem;
+        }
+      }
+    }
+
+    .theme-toggle {
+      display: flex;
+      align-items: center;
+      justify-content: initial;
+      padding-top: 0;
+      border-top: none;
+      padding-left: 1rem;
+      border-left: 2px solid var(--clr-surface);
+    }
+  }
+}

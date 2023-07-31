@@ -1,0 +1,65 @@
+@use "../util" as *;
+:root {
+  --space-s: clamp(1rem, calc(0.36rem + 3.21vw), 1.56rem);
+}
+
+.hero {
+  padding: 0;
+  width: 100%;
+
+  img {
+    aspect-ratio: 16/9;
+    width: 100%;
+    object-position: center;
+    object-fit: cover;
+  }
+
+  &-article {
+    padding: var(--space-s);
+  }
+
+  &-picture {
+    box-shadow: $picture-box-shadow;
+  }
+
+  button {
+    @extend .primary-btn;
+    margin-top: 1.5rem;
+  }
+}
+
+@media (min-width: 600px) {
+  .container {
+    width: min(94%, 1100px);
+  }
+
+  body {
+    --fs-subheading: 20px;
+  }
+
+  .hero {
+    display: flex;
+    flex-direction: row-reverse;
+    width: min(94%, 1100px);
+    align-items: center;
+    gap: 0 1rem;
+    justify-content: space-between;
+
+    h1 {
+      font-size: var(--fs-subheading);
+    }
+
+    article {
+      padding: 0;
+      flex: 0 1 28rem;
+    }
+
+    picture {
+      flex: 0 1.4 34rem;
+    }
+
+    button {
+      font-size: 11px;
+    }
+  }
+}
