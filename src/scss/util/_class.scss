@@ -126,11 +126,6 @@
   overflow-y: hidden;
 }
 
-.animated {
-  filter: blur(0);
-  opacity: 1;
-}
-
 //from ui verse
 
 .theme-toggle {
@@ -181,16 +176,6 @@
   }
 }
 
-.anim {
-  opacity: 0;
-  filter: blur(5px);
-  transition: all 1s;
-}
-
-.animated {
-  opacity: 1;
-  filter: blur(0);
-}
 
 .loading-wrapper {
   display: grid;
