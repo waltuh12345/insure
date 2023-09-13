@@ -126,12 +126,6 @@
   overflow-y: hidden;
 }
 
-.animate {
-  opacity: 0;
-  transition: all 1s;
-  filter: blur(5px);
-}
-
 .animated {
   filter: blur(0);
   opacity: 1;
